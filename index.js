@@ -36,11 +36,13 @@ const run = async() => {
 
     // const user = await User.findOne({name: "Umayer"})
     // const user = await User.findByName('Umayer')
-    const user = await User.find().byName('Umayer')
+    // const user = await User.find().byName('Umayer')
+    const user = await User.findOne({name: 'Umayer'})
   
     
     console.log(user)
     // user.sayHi()
+    console.log(user.namedEmail)
 
   } 
   catch (err) {

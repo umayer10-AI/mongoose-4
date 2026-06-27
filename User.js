@@ -72,4 +72,8 @@ userSchema.query.byName = function (name) {
     })
 }
 
+userSchema.virtual('namedEmail').get(function() {
+    return `${this.name} <${this.email}>`
+})
+
 module.exports = mongoose.model("User", userSchema)
