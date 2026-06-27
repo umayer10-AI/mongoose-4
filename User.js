@@ -50,4 +50,8 @@ const userSchema = new mongoose.Schema(
     },
 )
 
+userSchema.methods.sayHi = function () {
+    console.log(`Hi. My name is ${this.name}`)
+}
+
 module.exports = mongoose.model("User", userSchema)

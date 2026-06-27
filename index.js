@@ -21,22 +21,24 @@ const run = async() => {
     // user.bestFriend = "6a3ea673fa0d87b7f301b071"
     // await user.save();
 
-    const user = await User.where('age')
-    .gt(21)
-    .lt(35)
-    .where('name')
-    .equals('Umayer')
-    .populate('bestFriend')
-    // .populate("bestFriend", "name age")
-    .limit(1)
+    // const user = await User.where('age')
+    // .gt(21)
+    // .lt(35)
+    // .where('name')
+    // .equals('Umayer')
+    // .populate('bestFriend')
+    // // .populate("bestFriend", "name age")
+    // .limit(1)
 
     // const user = await User.findOne({ name: "Umayer" });
     // const friend = await User.findById(user.bestFriend);
     // user.bestFriend = friend;
-    
+
+    const user = await User.findOne({name: "Umayer"})
+  
     
     console.log(user)
-    // console.log(user.length)
+    user.sayHi()
 
   } 
   catch (err) {
