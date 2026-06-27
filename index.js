@@ -34,11 +34,13 @@ const run = async() => {
     // const friend = await User.findById(user.bestFriend);
     // user.bestFriend = friend;
 
-    const user = await User.findOne({name: "Umayer"})
+    // const user = await User.findOne({name: "Umayer"})
+    // const user = await User.findByName('Umayer')
+    const user = await User.find().byName('Umayer')
   
     
     console.log(user)
-    user.sayHi()
+    // user.sayHi()
 
   } 
   catch (err) {
