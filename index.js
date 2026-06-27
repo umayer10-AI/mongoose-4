@@ -43,6 +43,7 @@ const run = async() => {
     console.log(user)
     // user.sayHi()
     console.log(user.namedEmail)
+    await user.save()
 
   } 
   catch (err) {

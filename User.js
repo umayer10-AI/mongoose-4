@@ -76,4 +76,25 @@ userSchema.virtual('namedEmail').get(function() {
     return `${this.name} <${this.email}>`
 })
 
+userSchema.pre('save', async function() {
+    // this.updatedAt = Date.now()
+    this.email = this.email.toUpperCase();
+    console.log('Before Save')
+    // throw new Error("Fail Save")
+})
+
+userSchema.post('save', async function(doc) {
+    doc.sayHi()
+    console.log('After Saved')
+})
+
+// pre("save")       // save() এর আগে
+// post("save")      // save() এর পরে
+
+// pre("validate")   // validation-এর আগে
+// post("validate")  // validation-এর পরে
+
+// pre("deleteOne")  // delete-এর আগে
+// post("deleteOne") // delete-এর পরে
+
 module.exports = mongoose.model("User", userSchema)
